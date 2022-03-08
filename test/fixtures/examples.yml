@@ -1,0 +1,10 @@
+<% 10.times do |i| %>
+  <%= i %>:
+    integer: <%= i %>
+    datetime: <%= i.days.ago %>
+    string: <%= i.to_s %>
+<% end %>
+  blank:
+    integer:
+    datetime:
+    string:
