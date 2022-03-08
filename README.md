@@ -1,6 +1,6 @@
 # action_state
 
-ActionState provides a simple DSL for defining model states and allows you to query the state as an ActiveRecord scope on the class and a predicate on the instance.
+ActionState provides a simple DSL for defining Rails model states allowing you to query the state as an ActiveRecord scope on the class and a predicate on the instance.
 
 For example, the following state definition defines a class scope `Article.published` and an instance predicate `article.published?`.
 

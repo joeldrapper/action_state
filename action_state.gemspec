@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Joel Drapper"]
   spec.email       = ["joel@drapper.me"]
   spec.homepage    = "https://github.com/joeldrapper/action_state"
-  spec.summary     = "Small DSL for defining model states."
-  spec.description = "Quickly define model state predicates and scopes at the same time."
+  spec.summary     = "Small DSL for defining Rails model states."
+  spec.description = "Quickly define Rails model predicates and scopes at the same time."
   spec.license     = "MIT"
   
   spec.metadata["homepage_uri"] = spec.homepage
