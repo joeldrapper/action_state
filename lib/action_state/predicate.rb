@@ -18,16 +18,7 @@ module ActionState
     def where(**kwargs)
       return self unless @result
 
-      @result = false if kwargs.any? do |k, v|
-        case v
-        when ::Range
-          !v.cover? @record.send(k)
-        when ::Enumerable
-          !v.include? @record.send(k)
-        else
-          v != @record.send(k)
-        end
-      end
+      @result = false if kwargs.any? { |k, v| !compare(v, @record.send(k)) }
 
       self
     end
@@ -38,15 +29,7 @@ module ActionState
       @result = false if kwargs.any? do |k, v|
         attribute = @record.send(k)
         next true if attribute.nil? && !v.nil?
-
-        case v
-        when ::Range
-          v.cover? attribute
-        when ::Enumerable
-          v.include? attribute
-        else
-          v == attribute
-        end
+        compare(v, attribute)
       end
 
       self
@@ -58,6 +41,19 @@ module ActionState
       @result = false unless @record.send("#{method_name}?", *args, **kwargs, &block)
 
       self
+    end
+
+    private
+
+    def compare(value, attribute_value)
+      case value
+      when ::Range
+        value.cover? attribute_value
+      when ::Enumerable
+        value.include? attribute_value
+      else
+        value == attribute_value
+      end
     end
   end
 end
