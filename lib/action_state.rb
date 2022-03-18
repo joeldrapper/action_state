@@ -10,7 +10,7 @@ module ActionState
       scope(name, Proc.new(&block))
 
       define_method("#{name}?") do |*args, **kwargs|
-        Predicate.new(self).instance_exec(*args, **kwargs, &block).result
+        Predicate.new(self).instance_exec(*args, **kwargs, &block).__matched__
       end
     end
   end
