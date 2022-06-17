@@ -11,6 +11,10 @@ class Article < ApplicationRecord
 end
 ```
 
+## ✨ Contributing ✨
+
+If you’re interested in contributing to this project, you can [book a pairing session with me](https://calendly.com/joeldrapper/pair?month=2022-06) and we can work through it together and I can hopefully share some context with you. Otherwise, please feel free top open a PR / issue / description. ❤️
+
 ## Usage
 
 ActionState supports a small subset of ActiveRecord queries for the predicate definition, and delegates the scope definition to ActiveRecord.
@@ -111,10 +115,6 @@ class ApplicationRecord < ActiveRecord::Base
   ...
 end
 ```
-
-## Contributing
-
-Contributions are welcome. Please feel free top open a PR / issue / discussion.
 
 ## License
 
